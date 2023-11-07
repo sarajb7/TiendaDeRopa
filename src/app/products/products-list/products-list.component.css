@@ -1,0 +1,26 @@
+.gallery{
+width: 100vw;
+display: grid;
+grid-template-columns: repeat(3, 1fr); 
+grid-gap: 20px;
+}
+
+.gallery-list{
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+img{
+max-width: 10vw;
+}
+
+h3{
+
+}
+.price{
+
+}
+.description{
+
+}
