@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsCategoriesComponent } from './products-categories/products-categories.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -12,11 +12,13 @@ import { ProductsCategoriesComponent } from './products-categories/products-cate
     ProductsCategoriesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatGridListModule
   ],
   exports: [
     ProductsListComponent,
-    ProductsCategoriesComponent
+    ProductsCategoriesComponent,
+
   ]
 })
 export class ProductsModule { }

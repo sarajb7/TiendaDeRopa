@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class ProductsService {
 
   url: string = "https://fakestoreapi.com/products"
+  url2: string = "https://fakestoreapi.com/products/categories"
 
   constructor(private httpClient: HttpClient) { }
 
