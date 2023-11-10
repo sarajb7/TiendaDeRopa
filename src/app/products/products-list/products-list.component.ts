@@ -2,6 +2,7 @@ import { ProductsService } from './../products.service';
 import { Component, OnInit } from '@angular/core';
 import { IProducts } from '../products.model';
 
+
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -11,7 +12,7 @@ export class ProductsListComponent implements OnInit{
 
   products: IProducts[] = [];
 
-  constructor( private productService: ProductsService) {}
+  constructor( private productService: ProductsService ) {}
 
   ngOnInit(): void {
     this.findAll();
