@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductsCategoriesComponent } from './products-categories/products-categories.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductsRoutingModule } from './products-routing.module';
+import { ProductsFormComponent } from './products-form/products-form.component';
+import { ProductsDetailComponent } from './products-detail/products-detail.component';
+
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -9,14 +17,19 @@ import { ProductsCategoriesComponent } from './products-categories/products-cate
 @NgModule({
   declarations: [
     ProductsListComponent,
-    ProductsCategoriesComponent
+    ProductsDetailComponent,
+    ProductsFormComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatGridListModule,
+    HttpClientModule,
+    ProductsRoutingModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule
   ],
   exports: [
-    ProductsListComponent,
-    ProductsCategoriesComponent
   ]
 })
 export class ProductsModule { }
