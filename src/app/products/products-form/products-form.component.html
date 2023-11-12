@@ -1,1 +1,64 @@
-<p>products-form works!</p>
+<!-- <h2 *ngIf="productForm.get('id')?.value=== 0"> Creación de Producto </h2>
+<h2 *ngIf="!(productForm.get('id')?.value=== 0)"> Edición de Producto {{productForm.get('id')?.value}} </h2> -->
+
+<!-- <form formGroup="productForm" (ngSubmit)="save()">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" required>
+
+    <label for="categoria">Categoría:</label>
+    <input type="text" id="categoria" name="categoria" required>
+
+   
+    <label for="precio">Precio:</label>
+    <input type="number" id="precio" name="precio" step="0.01" required>
+
+    
+    <button type="submit">Enviar</button>
+  </form> -->
+
+  <div class="container">
+    <form id="productForm" (ngSubmit)="save()">
+      <div class="row">
+        <h4>Title</h4>
+        <div class="input-group input-group-icon">
+          <input type="text" placeholder="Name of the product" formControlName="title"/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <h4>Price</h4>
+        <div class="input-group input-group-icon">
+          <input type="price" placeholder="€" formControlName="price"/>
+          <div class="input-icon"><i class="fa fa-envelope"></i></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-half">
+          <h4>Category</h4>
+          <div class="input-group">
+            <input id="electronics" type="radio" name="category" value="electronics" formControlName="category"/>
+            <label for="electronics">Electronics</label>
+            <input id="jewelery" type="radio" name="category" value="jewelery" formControlName="category"/>
+            <label for="jewelery">Jewelery</label>
+            <input id="male-clothing" type="radio" name="category" value="menclothing" formControlName="category"/>
+            <label for="male-clothing">Men's clothing</label>
+            <input id="female-clothing" type="radio" name="category" value="femaleclothing" formControlName="category"/>
+            <label for="female-clothing">Women's clothing</label>
+          </div>
+        </div>
+      </div>
+      <h4>Image</h4>
+        <div class="input-group input-group-icon">
+          <input type="text" placeholder="Image of the product" formControlName="image"/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <h4>Description</h4>
+        <div class="input-group input-group-icon">
+          <input type="text" placeholder="Description of the product" formControlName="description"/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <div class="submit-button">
+            <button class="button" type="submit" (click)="save()">
+            Submit
+        </button>
+        </div>
+    </form>
+  </div>

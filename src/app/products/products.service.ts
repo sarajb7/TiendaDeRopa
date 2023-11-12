@@ -21,6 +21,10 @@ export class ProductsService {
     return this.httpClient.get<IProducts>(`${this.url2}/${category}`)
   }
 
+  findById(id: number): Observable<IProducts> {
+    return this.httpClient.get<IProducts>(`${this.url}/${id}`);
+  }
+
   findAllByCompletedTrue(): Observable<IProducts[]> {
     return this.httpClient.get<IProducts[]>(`${this.url}?completed=true`)
   }
@@ -29,8 +33,9 @@ export class ProductsService {
     return this.httpClient.get<IProducts[]>(`${this.url}?completed=false`)
   }
 
-  create(products: IProducts): Observable<IProducts>{
-    return this.httpClient.post<IProducts>(this.url, products)
+  create(product: IProducts): Observable<IProducts>{
+    console.log('holitaa')
+    return this.httpClient.post<IProducts>(this.url, product)
   }
 
   update(products: IProducts): Observable<IProducts>{

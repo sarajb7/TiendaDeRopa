@@ -1,4 +1,4 @@
-/* .gallery{
+.gallery{
 width: 100vw;
 display: grid;
 grid-template-columns: repeat(3, 1fr); 
@@ -23,4 +23,4 @@ h3{
 }
 .description{
 
-} */
+}
