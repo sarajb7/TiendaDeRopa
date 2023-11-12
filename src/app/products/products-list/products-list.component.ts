@@ -25,8 +25,5 @@ export class ProductsListComponent implements OnInit{
     })
   }
 
-  hideDescription(product: IProducts): void {
-    product.showDescription = !product.showDescription;
-  }
 
 }

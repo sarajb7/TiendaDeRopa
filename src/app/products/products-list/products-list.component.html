@@ -1,23 +1,16 @@
-<!-- <div class="gallery">
+<button>
+     <a href="/products/new" >
+    Incluye un producto</a>
+</button>
+
+<div class="gallery">
     <div class="gallery-list" *ngFor="let product of products">
         
         <img src="{{ product.image }}"/>
         <h3>{{ product.title }}</h3>
         <p class="price">{{ product.price }}</p>
-        
-        <button (click)="hideDescription(product)">
-            INFO
-            <p class="description"[hidden]="!product.showDescription">{{ product.description}}</p>
-        </button>
     </div>
-</div> -->
+</div>
 
-<!-- <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-  </mat-grid-list> -->
 
-  <button mat-stroked-button color="primary" routerLink='/products/new' >
-    Incluye un producto</button>
+ 

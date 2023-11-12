@@ -7,7 +7,6 @@ import { UsersFormComponent } from './users/users-form/users-form.component';
 import { ProductsFormComponent } from './products/products-form/products-form.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {
     path: 'products/new',
@@ -15,7 +14,7 @@ const routes: Routes = [
   },
   {path: 'products', component: ProductsListComponent},
   {path: 'users', component: UsersFormComponent},
-  
+  {path:'', redirectTo: '/home', pathMatch: 'full'},
 ];
 
 @NgModule({
