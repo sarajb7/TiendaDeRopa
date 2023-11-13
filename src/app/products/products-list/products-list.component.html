@@ -1,16 +1,19 @@
-<button>
-     <a href="/products/new" >
-    Incluye un producto</a>
-</button>
-
-<div class="gallery">
-    <div class="gallery-list" *ngFor="let product of products">
-        
-        <img src="{{ product.image }}"/>
-        <h3>{{ product.title }}</h3>
-        <p class="price">{{ product.price }}</p>
+<div class="body">
+    <div class="button-div">
+        <button class="add-button"> <a href="/products/new">Add a product</a> </button> 
+    </div>
+    <div class="gallery">
+        <div class="gallery-list" *ngFor="let product of products">
+            <img src="{{ product.image }}"/>
+            <h3>{{ product.title }}</h3>
+            <div class="price-info">
+                <p class="price">{{ product.price }}€</p>
+                <button class="info-button"> <a href="/products/{{product.id}}">More info</a> </button>
+            </div>
+        </div>
     </div>
 </div>
+
 
 
  
