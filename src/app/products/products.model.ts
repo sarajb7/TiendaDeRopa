@@ -4,6 +4,7 @@ export interface IProducts {
     title: string;
     price: number;
     description: string;
-    showDescription: boolean;
     category: string;
 }
+
+

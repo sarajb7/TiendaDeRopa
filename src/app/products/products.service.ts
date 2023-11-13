@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class ProductsService {
 
   url: string = "https://fakestoreapi.com/products"
+  url2: string = "https://fakestoreapi.com/products/category"
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,7 +18,11 @@ export class ProductsService {
   }
 
   findByCategory(category: string): Observable<IProducts> {
-    return this.httpClient.get<IProducts>(`${this.url}/${category}`)
+    return this.httpClient.get<IProducts>(`${this.url2}/${category}`)
+  }
+
+  findById(id: number): Observable<IProducts> {
+    return this.httpClient.get<IProducts>(`${this.url}/${id}`);
   }
 
   findAllByCompletedTrue(): Observable<IProducts[]> {
@@ -28,8 +33,8 @@ export class ProductsService {
     return this.httpClient.get<IProducts[]>(`${this.url}?completed=false`)
   }
 
-  create(products: IProducts): Observable<IProducts>{
-    return this.httpClient.post<IProducts>(this.url, products)
+  create(product: IProducts): Observable<IProducts>{
+    return this.httpClient.post<IProducts>(this.url, product)
   }
 
   update(products: IProducts): Observable<IProducts>{
