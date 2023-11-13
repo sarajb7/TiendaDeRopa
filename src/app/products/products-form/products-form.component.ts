@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from '../products.service';
 import { ActivatedRoute, Router} from '@angular/router';
 import { IProducts } from '../products.model';
@@ -12,12 +12,12 @@ import { IProducts } from '../products.model';
 export class ProductsFormComponent implements OnInit{
 
   productForm = new FormGroup({
-    id: new FormGroup<number>(0),
-    image: new FormGroup<string>(''),
-    title: new FormGroup<string>(''),
-    price: new FormGroup<number>(0),
-    description: new FormGroup<string>(''),
-    category: new FormGroup<string>(''),
+    id: new FormGroup<number>(0, [Validators.required]),
+    image: new FormGroup<string>('', [Validators.required]),
+    title: new FormGroup<string>('', [Validators.required]),
+    price: new FormGroup<number>(0, [Validators.required]),
+    description: new FormGroup<string>('', [Validators.required]),
+    category: new FormGroup<string>('', [Validators.required]),
   });
 
 
@@ -50,9 +50,7 @@ export class ProductsFormComponent implements OnInit{
   }
 
   save(): void {
-    console.log('probandoo')
-   
-      let id = this.productForm.get('id')?.value ?? 0;
+    let id = this.productForm.get('id')?.value ?? 0;
     let image = this.productForm.get('image')?.value ?? '';
     let title = this.productForm.get('title')?.value ?? '';
     let price = this.productForm.get('price')?.value ?? 0;
@@ -72,6 +70,6 @@ export class ProductsFormComponent implements OnInit{
       console.log('Producto creado', product);
       
     });
-      this.router.navigate(["/home"])
+      this.router.navigate(["/products"])
   }
 }

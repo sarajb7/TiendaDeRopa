@@ -34,7 +34,6 @@ export class ProductsService {
   }
 
   create(product: IProducts): Observable<IProducts>{
-    console.log('holitaa')
     return this.httpClient.post<IProducts>(this.url, product)
   }
 
